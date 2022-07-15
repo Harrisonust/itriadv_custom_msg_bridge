@@ -1,11 +1,13 @@
 # ros1_bridge instruction for itriadv custom msg
 
-在docker下總共有三個workspace itriadv(ros1) itriadv2(ros2) bridge_ws(ros2)
+總共會牽涉到三個workspace: 
+1. itriadv(ros1) 
+2. itriadv2(ros2) 
+3. bridge_ws(ros2)
 
 在itriadv跟itriadv2底下分別要有符合ros1 ros2命名規則的 msgs package
 
 ## build msgs under itriadv
-
 ```sh
 source $ROS1_INSTALL_PATH/setup.bash     # setup ros1 env
 cd ~/itriadv
