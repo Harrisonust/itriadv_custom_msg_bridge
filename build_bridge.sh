@@ -9,13 +9,14 @@ clean_all_ros_var() {
     unset "${!ROS@}"
 }
 
+clean_all_ros_var
+
 # build msgs under itriadv
 source $ROS1_INSTALL_PATH/setup.bash
 cd $ITRIADV1_DIR
 catkin_make --only-pkg-with-deps msgs
 
 clean_all_ros_var
-
 
 # build msgs under itriadv2
 source $ROS2_INSTALL_PATH/setup.bash     # setup ros2 env
@@ -32,8 +33,12 @@ source $ROS1_INSTALL_PATH/setup.bash
 source $ROS2_INSTALL_PATH/setup.bash 
 source $ITRIADV1_DIR/devel/setup.bash
 source $ITRIADV2_DIR/install/setup.bash
+mkdir -p $BRIDGE_DIR/src
+cd $BRIDGE_DIR/src/
+git clone git@github.com:ros2/ros1_bridge.git
 cd $BRIDGE_DIR
 colcon build --symlink-install --packages-select ros1_bridge --cmake-force-configure
 
+# Execute ros1_bridge
 source $BRIDGE_DIR/install/setup.bash
 ros2 run ros1_bridge dynamic_bridge --bridge-all-topics
