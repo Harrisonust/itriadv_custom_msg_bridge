@@ -39,6 +39,11 @@ endif()
 
 ament_export_include_directories(include)
   
+install(
+  DIRECTORY include/
+  DESTINATION include
+)
+
 install(FILES mapping_rules.yaml 
   DESTINATION share/${PROJECT_NAME}
 )
