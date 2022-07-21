@@ -4,7 +4,7 @@
   <name>msgs</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="brian841102@itri.org.tw">brian</maintainer>
+  <maintainer email="itri460778@itri.org.tw">harrison</maintainer>
   <license>TODO: License declaration</license>
   <buildtool_depend>ament_cmake</buildtool_depend>
 
